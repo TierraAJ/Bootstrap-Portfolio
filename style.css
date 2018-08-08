@@ -12,6 +12,15 @@ header{
     background-color: #ffffff;
 }
 
+body{
+    height: 100%;
+    padding-bottom: 80px;
+    padding-top: 20px;
+    margin: 0px 100px 100px 100px;
+    background-image:url("assets/images/symphony.png");
+
+}
+
 header.contaier-flow {
     font-family: 'Merienda', cursive;
     background-color: #ffffff;
@@ -42,14 +51,7 @@ a.nav-link:hover{
 
 }
 
-body{
-    height: 100%;
-    padding-bottom: 80px;
-    padding-top: 20px;
-    margin: 0px 100px 100px 100px;
-    background-image:url("assets/images/symphony.png");
 
-}
 
 .border-bottom{
     border: 0.6px #cccccc;
@@ -111,13 +113,39 @@ img{
 
 }
 
+.ovl{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.ovl:hover{
+    opacity: 1;
+    text-align: center; 
+    background: rgb(0,0,0,0.6);
+
+}
+
 @media screen and (max-width: 768px){
     
 }
 
-@media screen and (max-width: 575px){    
+@media screen and (max-width: 700px){    
     div.container.content{
         background-image:url("assets/images/symphony.png");
         text-align: center;
-    }   
+    }
+
+    .card{
+        display: inline-block;
+        
+    }
+    div.container {
+        @include media-breakpoint-only(lg) {
+          column-count: 4;
+        }
+        @include media-breakpoint-only(xl) {
+          column-count: 2;
+        }
+      }
+      
 }
